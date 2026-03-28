@@ -143,7 +143,8 @@
 
   .quote-meta {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 12px;
     align-items: center;
     margin-top: 8px;
   }
@@ -172,6 +173,14 @@
   }
 
   .moon-emoji { font-size: 13px; }
+  .quote-text-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.22);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
 
   /* ── POMODORO ── */
   .pomo-inline {
@@ -341,11 +350,9 @@
       <div class="quote-inline">
         <div class="quote-text" id="quote-text">Chargement...</div>
         <div class="quote-meta">
-          <span class="quote-author" id="quote-author"></span>
-          <div class="moon-info">
-            <span class="moon-emoji" id="moon-emoji">🌑</span>
-            <span id="moon-name">—</span>
-          </div>
+          <span class="moon-emoji" id="moon-emoji">🌑</span>
+          <span class="quote-text-meta" id="quote-author"></span>
+          <span class="quote-text-meta" id="moon-name">—</span>
         </div>
       </div>
     </div>
