@@ -38,7 +38,7 @@
   /* Subtle grid bg */
   body::before {
     content: '';
-    position: fixed;
+    position: absolute;
     inset: 0;
     background-image:
       linear-gradient(rgba(124,106,247,0.025) 1px, transparent 1px),
@@ -51,8 +51,8 @@
   /* Ambient glow top */
   body::after {
     content: '';
-    position: fixed;
-    top: -200px;
+    position: absolute;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 600px;
