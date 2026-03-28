@@ -34,17 +34,21 @@
     padding: 40px 32px 48px;
   }
 
+  /* ── HEADER ── */
   .header {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 48px;
-    margin-bottom: 40px;
-    padding-bottom: 36px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
-  .header-left { display: flex; flex-direction: column; gap: 6px; }
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
 
   .greeting {
     font-family: 'Inter', sans-serif;
@@ -59,7 +63,6 @@
     display: flex;
     align-items: baseline;
     gap: 10px;
-    flex-wrap: wrap;
   }
 
   .title-normal {
@@ -84,7 +87,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     font-weight: 300;
-    color: rgba(250,204,21,0.5);
+    color: rgba(250,204,21,0.45);
     letter-spacing: 1px;
     margin-top: 2px;
   }
@@ -93,12 +96,11 @@
     display: flex;
     align-items: baseline;
     gap: 12px;
-    margin-top: 14px;
+    margin-top: 12px;
   }
 
   .clock {
     font-family: 'DM Serif Display', serif;
-    font-style: normal;
     font-size: 36px;
     color: #ffffff;
     letter-spacing: -1px;
@@ -109,17 +111,75 @@
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-weight: 300;
-    color: rgba(250,204,21,0.5);
+    color: rgba(250,204,21,0.45);
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
 
+  /* ── QUOTE INLINE ── */
+  .quote-inline {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    max-width: 540px;
+  }
+
+  .quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.6;
+    transition: opacity 0.8s ease;
+  }
+
+  .quote-text.fade { opacity: 0; }
+
+  .quote-text strong {
+    font-style: normal;
+    color: #60a5fa;
+    font-weight: 400;
+  }
+
+  .quote-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .quote-author {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    color: rgba(250,204,21,0.35);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: opacity 0.8s ease;
+  }
+
+  .quote-author.fade { opacity: 0; }
+
+  .moon-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.22);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .moon-emoji { font-size: 13px; }
+
+  /* ── POMODORO ── */
   .pomo-inline {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 18px;
     padding: 24px 28px;
@@ -129,7 +189,6 @@
   .pomo-label {
     font-family: 'Inter', sans-serif;
     font-size: 9px;
-    font-weight: 400;
     color: #facc15;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -156,9 +215,9 @@
   }
 
   .ptab.on {
-    background: rgba(59,130,246,0.1);
-    color: #3b82f6;
-    border: 1px solid rgba(59,130,246,0.18);
+    background: rgba(96,165,250,0.12);
+    color: #60a5fa;
+    border: 1px solid rgba(96,165,250,0.2);
   }
 
   .pomo-time {
@@ -170,7 +229,7 @@
     transition: color 0.4s;
   }
 
-  .pomo-time.running { color: #3b82f6; }
+  .pomo-time.running { color: #60a5fa; }
 
   .pomo-btns {
     display: flex;
@@ -192,17 +251,17 @@
     justify-content: center;
   }
 
-  .pbtn:hover { border-color: rgba(59,130,246,0.35); color: #3b82f6; }
+  .pbtn:hover { border-color: rgba(96,165,250,0.4); color: #60a5fa; }
 
   .pbtn.play {
     width: 44px; height: 44px;
-    border: 1px solid rgba(59,130,246,0.25);
-    background: rgba(59,130,246,0.07);
-    color: #3b82f6;
+    border: 1px solid rgba(96,165,250,0.3);
+    background: rgba(96,165,250,0.08);
+    color: #60a5fa;
     font-size: 16px;
   }
 
-  .pbtn.play:hover { background: rgba(59,130,246,0.14); }
+  .pbtn.play:hover { background: rgba(96,165,250,0.16); }
 
   .pomo-dots { display: flex; gap: 7px; }
 
@@ -215,101 +274,25 @@
   }
 
   .pdot.on {
-    background: #3b82f6;
-    border-color: #3b82f6;
-    box-shadow: 0 0 6px rgba(59,130,246,0.35);
+    background: #60a5fa;
+    border-color: #60a5fa;
+    box-shadow: 0 0 8px rgba(96,165,250,0.4);
   }
 
   .pomo-sub {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 300;
-    color: rgba(250,204,21,0.35);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 36px;
-  }
-
-  .divider-line { flex: 1; height: 1px; background: rgba(59,130,246,0.12); }
-
-  .divider-ornament {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-size: 16px;
-    color: rgba(96,165,250,0.5);
-    letter-spacing: 6px;
-  }
-
-  .quote-section {
-    text-align: center;
-    padding: 0 24px;
-    margin-bottom: 40px;
-    min-height: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .quote-mark {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-size: 56px;
-    color: rgba(96,165,250,0.15);
-    line-height: 0.5;
-    display: block;
-    margin-bottom: 14px;
-  }
-
-  .quote-text {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    font-size: 21px;
-    color: #ffffff;
-    line-height: 1.65;
-    transition: opacity 0.8s ease;
-  }
-
-  .quote-text.fade { opacity: 0; }
-
-  .quote-text strong {
-    font-style: normal;
-    color: #60a5fa;
-    font-weight: 400;
-  }
-
-  .quote-author {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 300;
-    color: rgba(250,204,21,0.35);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 14px;
-    display: block;
-    transition: opacity 0.8s ease;
-  }
-
-  .quote-author.fade { opacity: 0; }
-
-  .quote-timer {
-    margin-top: 14px;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
     color: rgba(250,204,21,0.3);
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 
+  /* ── FOOTER ── */
   .footer {
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.04);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -319,7 +302,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 300;
-    color: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.1);
     letter-spacing: 2px;
     text-transform: uppercase;
   }
@@ -328,7 +311,7 @@
     font-family: 'DM Serif Display', serif;
     font-style: italic;
     font-size: 13px;
-    color: rgba(250,204,21,0.3);
+    color: rgba(250,204,21,0.15);
   }
 
   @media (max-width: 700px) {
@@ -336,7 +319,6 @@
     .pomo-inline { width: 100%; }
     .title-normal, .title-italic { font-size: 34px; }
     .pomo-time { font-size: 44px; }
-    .quote-text { font-size: 17px; }
     .wrap { padding: 28px 20px 36px; }
   }
 </style>
@@ -355,6 +337,16 @@
       <div class="clock-row">
         <div class="clock" id="clock">00:00</div>
         <div class="date-display" id="date-disp">—</div>
+      </div>
+      <div class="quote-inline">
+        <div class="quote-text" id="quote-text">Chargement...</div>
+        <div class="quote-meta">
+          <span class="quote-author" id="quote-author"></span>
+          <div class="moon-info">
+            <span class="moon-emoji" id="moon-emoji">🌑</span>
+            <span id="moon-name">—</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -379,19 +371,6 @@
     </div>
   </div>
 
-  <div class="divider">
-    <div class="divider-line"></div>
-    <div class="divider-ornament">✦ ✦ ✦</div>
-    <div class="divider-line"></div>
-  </div>
-
-  <div class="quote-section">
-    <span class="quote-mark">"</span>
-    <div class="quote-text" id="quote-text">Chargement...</div>
-    <span class="quote-author" id="quote-author"></span>
-    <div class="quote-timer" id="quote-timer"></div>
-  </div>
-
   <div class="footer">
     <div class="footer-text">© Svetlana Totolina</div>
     <div class="footer-ornament">Discipline · Excellence · Flow</div>
@@ -401,6 +380,7 @@
 </div>
 
 <script>
+// ── QUOTES ──────────────────────────────────────────────
 const QUOTES = [
   { text: "Le secret pour avancer est de <strong>commencer</strong>.", author: "Mark Twain" },
   { text: "Fais-le maintenant. Parfois « plus tard » devient <strong>jamais</strong>.", author: "" },
@@ -455,14 +435,6 @@ function showQuote(idx, animate) {
   }
 }
 
-function updateTimer() {
-  const rem = Math.max(0, nextChange - Date.now());
-  const m = Math.floor(rem / 60000);
-  const s = Math.floor((rem % 60000) / 1000);
-  document.getElementById('quote-timer').textContent =
-    `Prochaine pensée dans ${m}:${String(s).padStart(2,'0')}`;
-}
-
 function initQuotes() {
   const now = new Date();
   const block = Math.floor((now.getHours() * 60 + now.getMinutes()) / 15);
@@ -474,7 +446,6 @@ function initQuotes() {
     rotate();
     setInterval(rotate, ROTATION_MS);
   }, nextChange - Date.now());
-  setInterval(updateTimer, 1000);
 }
 
 function rotate() {
@@ -483,6 +454,37 @@ function rotate() {
   showQuote(quoteIdx, true);
 }
 
+// ── MOON PHASE ──────────────────────────────────────────
+function getMoonPhase() {
+  const now = new Date();
+  // Nouvelle lune de référence : 6 janvier 2000
+  const ref = new Date(2000, 0, 6, 18, 14, 0);
+  const LUNAR_CYCLE = 29.530588853;
+  const diff = (now - ref) / (1000 * 60 * 60 * 24);
+  const cycle = ((diff % LUNAR_CYCLE) + LUNAR_CYCLE) % LUNAR_CYCLE;
+  const day = Math.round(cycle);
+
+  let emoji, name;
+  if (cycle < 1.85)        { emoji = '🌑'; name = 'Nouvelle lune'; }
+  else if (cycle < 5.54)   { emoji = '🌒'; name = 'Premier croissant'; }
+  else if (cycle < 9.22)   { emoji = '🌓'; name = 'Premier quartier'; }
+  else if (cycle < 12.91)  { emoji = '🌔'; name = 'Lune gibbeuse croissante'; }
+  else if (cycle < 16.61)  { emoji = '🌕'; name = 'Pleine lune'; }
+  else if (cycle < 20.30)  { emoji = '🌖'; name = 'Lune gibbeuse décroissante'; }
+  else if (cycle < 23.99)  { emoji = '🌗'; name = 'Dernier quartier'; }
+  else if (cycle < 27.68)  { emoji = '🌘'; name = 'Dernier croissant'; }
+  else                     { emoji = '🌑'; name = 'Nouvelle lune'; }
+
+  return { emoji, name, day: Math.floor(cycle) };
+}
+
+function initMoon() {
+  const moon = getMoonPhase();
+  document.getElementById('moon-emoji').textContent = moon.emoji;
+  document.getElementById('moon-name').textContent = moon.name;
+}
+
+// ── CLOCK ────────────────────────────────────────────────
 const DAYS = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 const MONTHS = ['jan','fév','mar','avr','mai','juin','juil','août','sep','oct','nov','déc'];
 
@@ -498,6 +500,7 @@ function tick() {
   document.getElementById('year').textContent = n.getFullYear();
 }
 
+// ── POMODORO ─────────────────────────────────────────────
 let pSec = 1500, pRun = false, pInt = null, pDur = 1500, pSess = 0;
 
 function setMode(min, btn) {
@@ -553,9 +556,11 @@ function updateDots() {
     pSess >= 4 ? '✦ Série complète' : `Session ${pSess+1} · 4`;
 }
 
+// ── INIT ─────────────────────────────────────────────────
 window.addEventListener('load', () => {
   tick(); setInterval(tick, 1000);
   initQuotes();
+  initMoon();
 });
 </script>
 </body>
